@@ -1,0 +1,61 @@
+{
+  "peopleBlog": [
+    {
+      "id": "1",
+      "title": "Strawberry2222",
+      "description": "about strawberry"
+    },
+    {
+      "id": "2",
+      "title": "Banana",
+      "description": "about banana"
+    },
+    {
+      "id": "3",
+      "title": "Apples",
+      "description": "About apples"
+    },
+    {
+      "id": "4",
+      "title": "Peach",
+      "description": "about peach"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": "1",
+      "text": "Коментар 1 до поста 1"
+    },
+    {
+      "id": 2,
+      "postId": "1",
+      "text": "Коментар 2 до поста 1"
+    },
+    {
+      "id": 3,
+      "postId": "1",
+      "text": "Коментар 3 до поста 1"
+    },
+    {
+      "id": 4,
+      "postId": "2",
+      "text": "Коментар 1 до поста 2"
+    },
+    {
+      "id": "fa18",
+      "postId": "1",
+      "text": "цук"
+    },
+    {
+      "id": "88ff",
+      "postId": "2",
+      "text": "fg"
+    },
+    {
+      "id": "4a15",
+      "postId": "2",
+      "text": "fgh"
+    }
+  ]
+}

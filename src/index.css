@@ -1,0 +1,38 @@
+.post-item{
+    background-color: darkolivegreen;
+    outline: solid black 2px;
+}
+
+
+
+#editPostForm{
+    background-color: darkred;
+    /* display: flex; */
+    flex-direction: column;
+    width: 560px;
+    height: 200px;
+    justify-content: center;
+    gap: 20px;
+}
+
+#edit-titleInput{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#edit-contentInput{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#edit-btn{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.is-hidden{
+    display: none;
+}
