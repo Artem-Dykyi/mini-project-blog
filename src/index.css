@@ -1,13 +1,137 @@
-.post-item{
-    background-color: darkolivegreen;
-    outline: solid black 2px;
+body {
+    background-color: bisque;
 }
 
 
 
+.blog-title{
+    text-align: center;
+    color: coral;
+}
+
+#searchInput {
+    padding: 10px;
+    background-color: bisque;
+    border-radius: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#createPostForm{
+    background-color: coral;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    gap: 10px;
+
+}
+
+#postsContainer {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#titleInput {
+    width: 308px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: bisque;
+
+}
+
+#contentInput{
+    width: 300px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: bisque;
+
+}
+
+#createPostBtn{
+    width: 320px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: bisque;
+
+}
+
+
+.post-item{
+    padding: 20px;
+    background-color: burlywood;
+    outline: solid indianred 1px;
+    width: 400px;
+    list-style: none;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    
+}
+
+.post-title{
+    color: indianred;
+}
+
+.post-description{
+    color: indianred;
+    width: 300px;
+
+}
+
+.editPostButton{
+    background-color: burlywood;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.deletePostButton {
+    background-color: burlywood;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.addComentsButton{
+    background-color: burlywood;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.commentInput {
+    background-color: burlywood;
+    padding: 10px;
+    border-radius: 40px;
+
+}
+
+.load-more{
+    margin-top: 40px;
+    margin-bottom: 100px;
+    background-color: burlywood;
+    padding: 15px;
+    border-radius: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.commentTitle{
+    color: indianred;
+
+}
+
 #editPostForm{
     background-color: darkred;
-    /* display: flex; */
     flex-direction: column;
     width: 560px;
     height: 200px;

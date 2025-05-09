@@ -5,17 +5,18 @@
     <link rel="stylesheet" href="./index.css">
   </head>
   <body>
-    <h1>Блог</h1>
+    <h1 class="blog-title">Blog</h1>
+    <input type="text" id="searchInput" placeholder="Пошук постів..." />
     <form id="createPostForm">
       <input type="text" id="titleInput" placeholder="Заголовок" required />
       <textarea id="contentInput" placeholder="Зміст" required></textarea>
-      <button type="submit">Створити пост</button>
+      <button id="createPostBtn" type="submit">Створити пост</button>
     </form>
     <form id="editPostForm" class="is-hidden">
         <input type="hidden" id="edit-id" />
         <input type="text" id="edit-titleInput" placeholder="Заголовок" required />
         <textarea id="edit-contentInput" placeholder="Зміст" required></textarea>
-        <button type="submit">Редагувати пост</button>
+        <button id="editPostUpdate"  type="submit">Редагувати пост</button>
       </form>
     <div id="postsContainer"></div>
 
@@ -41,6 +42,8 @@
         </form>
       </div>
     </div>
+    <button type="button" class="load-more">Завантажити ще</button>
+
     <script type="module" src="./index.js"></script>
   </body>
 </html>

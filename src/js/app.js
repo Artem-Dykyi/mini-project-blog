@@ -5,8 +5,15 @@ import { getPosts } from "./getPosts";
 import { updatePost } from "./updatePost";
 import { renderPosts } from "./renderPosts";
 
+import Handlebars from 'handlebars';
+import postTemplateSrc from '../template/postsTemplate.hbs';
 
 
+export const renderPosts = (posts) => {
+    const template = Handlebars.compile(postTemplateSrc);
+    const html = template({ posts });
+    document.querySelector(".post-list").innerHTML = html;
+  };
 
 getPosts().then((peopleBlog) => {document.querySelector(".post-list").innerHTML = renderPosts(peopleBlog)})
 
@@ -109,7 +116,8 @@ event.currentTarget.querySelector(".commentInput").value = ""
 
 
 
-document.addEventListener("submit", async (event) => {
+
+  document.addEventListener("submit", async (event) => {
     if (event.target.classList.contains("createCommentForm")) {
       event.preventDefault();
   
@@ -119,11 +127,82 @@ document.addEventListener("submit", async (event) => {
   
       if (!text) return;
   
-      createComment(postId, { text });
+      await createComment(postId, { postId, text }); 
       input.value = "";
   
-      // Повторно рендеримо пости з оновленими коментарями
-      const updatedPosts = getPosts();
-      document.querySelector(".post-list").innerHTML = renderPosts(updatedPosts);
+      const updatedPosts = await getPosts();
+      renderPosts(updatedPosts);
     }
+  });
+
+
+
+// let page = 1
+// getPosts(page).then((peopleBlog) => {document.querySelector(".post-list").innerHTML = renderPosts(peopleBlog)})
+
+
+// document.querySelector(".load-more").addEventListener("click", () => {
+//     page ++;
+//     getPosts(page).then((peopleBlog) => {document.querySelector(".post-list").insertAdjacentHTML("beforeend", renderPosts(peopleBlog));
+//       });
+// })     
+
+
+
+
+
+// getPosts(page).then((peopleBlog) => {
+//   renderPosts(peopleBlog);
+//   console.log({peopleBlog});
+// });
+let page = 1;
+
+
+document.querySelector(".load-more").addEventListener("click", () => {
+  page += 1;
+  getPosts(page).then((peopleBlog) => { 
+  renderPosts(peopleBlog);
+  });
+});
+
+
+// document.addEventListener("click", (event) => {
+//     if (event.target.classList.contains("load-more")) {
+//         page +=1;
+//         getPosts(page).then((peopleBlog) => { 
+//         renderPosts(peopleBlog);
+//         });
+//     }
+//   });
+
+
+
+
+
+//пошук постів 
+let allPosts = []; 
+
+const filterPosts = (searchTerm) => {
+  const value = searchTerm.trim().toLowerCase();
+
+  if (!value) {
+    renderPosts(allPosts);
+    return;
+  }
+
+  const filtered = allPosts.filter(post =>
+    post.title.toLowerCase().includes(value) ||
+    post.description.toLowerCase().includes(value)
+  );
+
+  renderPosts(filtered);
+};
+
+document.querySelector("#searchInput").addEventListener("input", (e) => {
+    filterPosts(e.target.value);
+  });
+
+  getPosts().then(posts => {
+    allPosts = posts;           
+    renderPosts(allPosts);      
   });
