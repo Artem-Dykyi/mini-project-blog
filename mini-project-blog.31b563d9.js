@@ -825,7 +825,8 @@ document.querySelector("#searchInput").addEventListener("input", (e)=>{
 (0, _getPosts.getPosts)().then((posts)=>{
     allPosts = posts;
     (0, _renderPosts.renderPosts)(allPosts);
-}); //   startApp();
+});
+startApp();
 
 },{"./createComment":"bvT97","./createPost":"5kP8d","./deletePost":"c5e6f","./getPosts":"i41ol","./updatePost":"1p1uB","./renderPosts":"bD6By","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","handlebars":"9pFby","../template/postsTemplate.hbs":"2tSY9"}],"bvT97":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
