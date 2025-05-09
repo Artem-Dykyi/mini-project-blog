@@ -9,7 +9,7 @@
 
 
 
-export const getPosts = async (page) => {
+export const getPosts = async () => {
     try{
         const postsRes = await fetch(`http://localhost:3000/peopleBlog`);
         const commentsRes = await fetch("http://localhost:3000/comments");

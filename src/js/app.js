@@ -112,7 +112,7 @@ event.currentTarget.querySelector(".commentInput").value = ""
 // Запуск додатку
 
 
-// startApp();
+// 
 
 
 
@@ -206,3 +206,5 @@ document.querySelector("#searchInput").addEventListener("input", (e) => {
     allPosts = posts;           
     renderPosts(allPosts);      
   });
+
+  startApp();
