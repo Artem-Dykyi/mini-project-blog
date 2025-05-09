@@ -765,7 +765,7 @@ document.querySelector(".createCommentForm").addEventListener('submit', (event)=
     event.currentTarget.querySelector(".commentInput").value = "";
 });
 // Запуск додатку
-// startApp();
+// 
 document.addEventListener("submit", async (event)=>{
     if (event.target.classList.contains("createCommentForm")) {
         event.preventDefault();
@@ -825,9 +825,9 @@ document.querySelector("#searchInput").addEventListener("input", (e)=>{
 (0, _getPosts.getPosts)().then((posts)=>{
     allPosts = posts;
     (0, _renderPosts.renderPosts)(allPosts);
-});
+}); //   startApp();
 
-},{"./createComment":"bvT97","./createPost":"5kP8d","./deletePost":"c5e6f","./getPosts":"i41ol","./updatePost":"1p1uB","./renderPosts":"bD6By","handlebars":"9pFby","../template/postsTemplate.hbs":"2tSY9","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"bvT97":[function(require,module,exports,__globalThis) {
+},{"./createComment":"bvT97","./createPost":"5kP8d","./deletePost":"c5e6f","./getPosts":"i41ol","./updatePost":"1p1uB","./renderPosts":"bD6By","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","handlebars":"9pFby","../template/postsTemplate.hbs":"2tSY9"}],"bvT97":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createComment", ()=>createComment);
@@ -926,7 +926,7 @@ async function deletePost(postDel) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getPosts", ()=>getPosts);
-const getPosts = async (page)=>{
+const getPosts = async ()=>{
     try {
         const postsRes = await fetch(`http://localhost:3000/peopleBlog`);
         const commentsRes = await fetch("http://localhost:3000/comments");
